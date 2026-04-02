@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển hướng website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .card {
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 16px;
+            padding: 35px 30px;
+            max-width: 380px;           /* Bé hơn trước */
+            width: 88%;
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.75);
+            opacity: 0;
+            transform: scale(0.72);
+            animation: cardAppear 0.95s ease forwards;
+        }
+
+        .main-text {
+            font-size: 2.45rem;         /* Chữ vẫn to nhưng vừa với card bé */
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .sub-text {
+            font-size: 1.22rem;
+            margin-bottom: 32px;
+            line-height: 1.5;
+            color: #222222;
+        }
+
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 1.22rem;
+            color: #444444;
+            margin-bottom: 28px;
+        }
+
+        .spinner {
+            width: 26px;
+            height: 26px;
+            border: 4.5px solid #eeeeee;
+            border-top-color: #000000;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .domain {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #0066ff;
+            margin-top: 6px;
+        }
+
+        .note {
+            margin-top: 35px;
+            font-size: 1rem;
+            color: #555555;
+        }
+
+        .note a {
+            color: #0066ff;
+            text-decoration: underline;
+        }
+
+        @keyframes cardAppear {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="main-text">WEBSITE ĐÃ CHUYỂN ĐỔI</div>
+        
+        <div class="sub-text">
+            Tên miền cũ không còn sử dụng.<br>
+            Đang chuyển hướng bạn đến domain mới
+        </div>
+
+        <div class="loading">
+            <div class="spinner"></div>
+            <span>Đang chuyển hướng tự động...</span>
+        </div>
+
+        <div class="domain">4ggiare.cloud</div>
+
+        <div class="note">
+            Nếu không tự động chuyển, <a href="https://4ggiare.cloud">bấm vào đây</a>
+        </div>
+    </div>
+
+    <script>
+        // Tự động chuyển hướng sau 3.5 giây
+        setTimeout(() => {
+            window.location.href = "https://4ggiare.cloud";
+        }, 3500);
+    </script>
+</body>
+</html>
